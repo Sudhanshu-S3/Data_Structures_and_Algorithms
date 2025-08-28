@@ -5,7 +5,7 @@ This repository is my personal reference guide for mastering Data Structures and
 
 ## File Structure 
 
-##  Interview Practice
+###  Interview Practice
 
 This is the first and main folder of the repository.
 
