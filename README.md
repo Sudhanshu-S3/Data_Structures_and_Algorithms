@@ -1,5 +1,5 @@
 
-# My DSA Interview Prep Hub
+# My DSA Practice Recap
 
 This repository is my personal reference guide for mastering Data Structures and Algorithms (DSA) for technical interviews. The goal is to keep things simple, clean, and focused on what really matters.
 
@@ -13,6 +13,19 @@ Inside this folder, you will find:
 
 * **Optimized Solutions:** The most efficient and effective solutions for common DSA problems. I focus on the "best" way to solve it, not just any way.
 * **Tricky Questions:** A special collection of problems that have a single, clever solutions only for that specific question.
+
+
+### QuestionToDO
+
+* List of Questions To Do Next.
+
+### QuestionDONE
+
+* List of Questions that i have solved with my solution and Notes.
+
+### Algorithms 
+
+* New Algorithms that i have Learned.
 
 
 ## Resources 
