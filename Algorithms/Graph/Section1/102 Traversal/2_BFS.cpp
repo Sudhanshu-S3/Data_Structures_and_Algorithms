@@ -1,46 +1,26 @@
-//
-
-
 #include<bits/stdc++.h>
 
 using namespace std;
 
-class BFStraversal {
+//BFS Iterative approach using Queue
 
-    private:
-
+void BFS(int node, vector<vector<int>>& adj , vector<int>& visited){
     queue<int> q;
+    visited[node] = true;
+    q.push(node);
 
-    vector<bool> visited(Nodes , false);
+    while(!q.empty()){
+        int current = q.front();
+        q.pop();
+   
+        cout<< current<< " ";
 
-    vector<int> res;
-
-
-    public:
-
-        void BFS(){
-
-            q.push(graph[0]);
-
-            while(!q.empty()){
-                auto ptr = q.front();
-                q.pop();
-
-                for( auto & a : graphList[ptr]){
-                    if (visited[ a ])continue;
-                    q.push(a);
-
-                    res.push_back(a);
-                    visited[a]= true;
-
+            for(auto u : adj[current]){
+                
+                if(!visited[u]){
+                    visited[u] = true;
+                    q.push(u);
                 }
             }
-        }
-};
-
-int main(){
-
-
-
-    return 0;
+    }
 }
