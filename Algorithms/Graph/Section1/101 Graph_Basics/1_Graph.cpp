@@ -2,7 +2,18 @@
 
 using namespace std;
 
-// The Adjacency Matrix Implementation of Graph
+
+/*
+1. Graph Basics
+- Representations: adjacency list, adjacency matrix, edge list
+- Types: directed vs undirected, weighted vs unweighted, cyclic vs acyclic
+
+- I will try to implement One example of each type for practice. 
+*/
+
+/* GRAPH REPRESENTATION */
+
+// 1.The Adjacency Matrix Implementation of Graph
 
 class Graph {
 
@@ -49,6 +60,7 @@ class Graph {
         }
 };
 
+// 2. Adjacency LIST :- 
 
 // Now Lets implement the Adjacency List implementation 
 
@@ -89,15 +101,84 @@ class GraphList {
 
 };
 
+// 3. Graph Implementation Using EDGE list
+
+class GraphEdges{
+    private : 
+        int nodes,vertices,weights;
+        
+        vector<tuple<int,int,int>> graph;
+
+    public:
+
+        GraphEdges(){
+            cin>>nodes>>vertices;
+
+            for(int i= 0 ; i< vertices ; i++){
+                int u,v,w;
+                cin>>u>>v>>w;
+                graph.push_back({u,v,w});
+            }
+        }
+
+        void printGraph(){
+
+            for(int i=0 ; i< vertices ; i++){
+                auto [u,v,w] = graph[i];
+                cout<<u<<" "<<v<<" "<<w<<endl;
+            }
+        }
+};
+
+
+/* Type of Graph */
+
+// 1. Weighted vs Unweighted
+/*
+    weighted graph => vector<vector<pair<int,int>>> graph(nodes, vector<int> (vertices attached , weight of the edge))
+
+    Unweighted Graph => vector<vector<int>> graph(node , vector<int> (vertice attached to it))
+
+*/
+
+// 2. Directed vs Undirected
+/*
+{
+    In Directed Graph only one way movement is allowed. In syntax we store it like this
+
+    eg:- graph[a][b] = weight or 1 ;
+
+    For UnDirected Graph as you have guessed.
+
+    eg:- graph[a][b] = weightA or 1;
+         graph[b][a] = weightA or 1;
+}
+*/
+// 3. Cyclic vs Acyclic
+/*
+    Whether the graph is cyclic or acyclic depends on runtime input (e.g., the edges provided).
+
+    To detect cycles, use algorithms like DFS with back-edge detection or Union-Find.
+    
+    For undirected connected graphs, a partial check is: If number of edges (E) > number of vertices (V) - 1, cycles exist.
+    
+        Note: This isn't sufficient for all cases (e.g., disconnected or directed graphs).
+*/
+
 int main(){
 
-    GraphList abc;
+    GraphList abjList;
 
-    abc.printGraph();
+    abjList.printGraph();
 
-    Graph de;
+    Graph mat;
 
-    de.printGraph();
+    mat.printGraph();
+
+    GraphEdges edged;
+
+    edged.printGraph();
 
     return 0;
 }
+
